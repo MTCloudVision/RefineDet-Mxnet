@@ -1,4 +1,4 @@
-#   DSSD MXNET
+#   RefineDet MXNET
 ## Features 
 
 - An MXNet implementation of [Single-Shot Refinement Neural Network for Object Detection](https://arxiv.org/abs/1711.06897).
