@@ -20,6 +20,7 @@ class negative_filtering(mx.operator.CustomOp):
 
         # apply filtering to odm_cls_target
         # arm_cls_preds_shape: (batch, 2, num_anchors)
+        arm_cls_preds = mx.nd.softmax(data=arm_cls_preds)
         arm_cls_preds_classes = mx.nd.split(data=arm_cls_preds, axis=1, num_outputs=2)
         arm_cls_preds_bg = mx.nd.Reshape(data=arm_cls_preds_classes[0], shape=(0, -1))
         prob_temp = mx.nd.ones_like(arm_cls_preds_bg) * 0.99
